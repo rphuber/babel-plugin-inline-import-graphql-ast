@@ -104,7 +104,7 @@ export default ({ types: t, template }) => ({
         }
 
         function buildVariableAST(graphqlAST, importName) {
-          const buildAst = template(`var IMPORT_NAME = AST;`)
+          const buildAst = template(`IMPORT_NAME = AST`)
           return buildAst({
             IMPORT_NAME: t.identifier(importName),
             AST: t.valueToNode(JSON.parse(JSON.stringify(graphqlAST)))
